@@ -1,8 +1,8 @@
-# 🎬 CineYantra — AI Movie Recommendation System
+# 🎬 MayaFlix — AI Movie Recommendation System
 
 <div align="center">
 
-![CineYantra](https://img.shields.io/badge/CineYantra-AI%20Movie%20Recommendation-e50914?style=for-the-badge&logo=film)
+![MayaFlix](https://img.shields.io/badge/MayaFlix-AI%20Movie%20Recommendation-e50914?style=for-the-badge&logo=film)
 
 [![Python](https://img.shields.io/badge/Python-3.10-blue?style=flat-square&logo=python)](https://python.org)
 [![Flask](https://img.shields.io/badge/Flask-3.0-green?style=flat-square&logo=flask)](https://flask.palletsprojects.com)
@@ -68,7 +68,7 @@ AI Recommendations
 # 📁 Project Structure
 
 ```bash
-CineYantra/
+MayaFlix/
 │
 ├── app.py
 ├── recommender.py
@@ -113,8 +113,8 @@ Place these files inside the `data/` folder:
 ## 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/your-username/CineYantra.git
-cd CineYantra
+git clone https://github.com/your-username/MayaFlix.git
+cd MayaFlix
 ```
 
 ---
@@ -168,7 +168,7 @@ http://127.0.0.1:5000
 
 # 📊 Recommendation Algorithm
 
-CineYantra uses:
+MayaFlix uses:
 
 - TF-IDF Vectorization
 - Cosine Similarity Matrix
@@ -223,6 +223,6 @@ Built with ❤️ By Bismaya Guruprasad Panda
 
 ## ⭐ If you like this project, give it a star!
 
-🎬 Happy Movie Watching with CineYantra 🍿
+🎬 Happy Movie Watching with MayaFlix 🍿
 
 </div>
