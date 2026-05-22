@@ -1,186 +1,228 @@
-# 🎬 MayaFlix - AI Movie Recommendation System
+# 🎬 CineYantra — AI Movie Recommendation System
 
 <div align="center">
 
-![MayaFlix Banner](https://img.shields.io/badge/MayaFlix-AI%20Movie%20Recommendations-e50914?style=for-the-badge&logo=film)
+![CineYantra](https://img.shields.io/badge/CineYantra-AI%20Movie%20Recommendation-e50914?style=for-the-badge&logo=film)
 
-[![Python](https://img.shields.io/badge/Python-3.8+-blue?style=flat-square&logo=python)](https://python.org)
+[![Python](https://img.shields.io/badge/Python-3.10-blue?style=flat-square&logo=python)](https://python.org)
 [![Flask](https://img.shields.io/badge/Flask-3.0-green?style=flat-square&logo=flask)](https://flask.palletsprojects.com)
-[![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.3-orange?style=flat-square)](https://scikit-learn.org)
+[![Scikit-learn](https://img.shields.io/badge/Scikit--learn-ML-orange?style=flat-square)](https://scikit-learn.org)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 
-**An offline AI-powered movie recommendation web app with Netflix-inspired dark UI**
+### 🎥 Offline AI-Powered Movie Recommendation System  
+Modern Netflix-inspired dark UI with Machine Learning 🤖
 
 </div>
 
 ---
 
-## ✨ Features
+# ✨ Features
 
-| Feature | Description |
-|---------|-------------|
-| 🤖 **AI Recommendations** | Content-Based Filtering with Cosine Similarity |
-| 🎨 **Netflix-Dark UI** | Glassmorphism, animations, cinematic design |
-| 🔍 **Smart Search** | Real-time autocomplete search |
-| 🎭 **Genre Browsing** | Filter movies by genre |
-| 💾 **100% Offline** | No API keys needed |
-| 📱 **Responsive** | Works on all screen sizes |
-| ❤️ **Watchlist** | Save favorite movies locally |
-| ⚡ **Fast** | Optimized TF-IDF + Cosine similarity |
+- 🤖 AI-based Movie Recommendations
+- 🎬 Content-Based Filtering
+- ⚡ Cosine Similarity Algorithm
+- 🌙 Netflix-inspired Dark UI
+- 🔍 Smart Movie Search
+- 🎭 Genre Browsing
+- 📱 Fully Responsive Design
+- 💾 100% Offline Project
+- 🚀 Fast & Lightweight
+- ❤️ Watchlist Feature
 
 ---
 
-## 🧠 How It Works
-User Input (Movie Title)
-↓
+# 🧠 How It Works
+
+```text
+Movie Selected
+      ↓
 TF-IDF Vectorization
-(Overview + Genres + Keywords + Cast + Director)
-↓
-Cosine Similarity Matrix
-↓
-Top N Similar Movies
-↓
-Ranked Results → UI
+      ↓
+Cosine Similarity
+      ↓
+Similar Movie Detection
+      ↓
+AI Recommendations
+```
 
-text
-
-
-### Algorithm Details:
-- **TF-IDF Vectorizer**: Converts movie metadata into numerical vectors
-- **Cosine Similarity**: Measures angle between movie vectors (0=different, 1=identical)
-- **Feature Weights**: Genres×3 > Keywords×2 > Overview×2 > Director×2 > Cast×1
-- **Bayesian Rating**: For better top-rated movie ranking
+### 🔬 ML Concepts Used
+- TF-IDF Vectorizer
+- Cosine Similarity
+- Content-Based Filtering
+- Feature Engineering
 
 ---
 
-## 📁 Project Structure
-MayaFlix/
-├── 📄 app.py # Flask application & routes
-├── 🧠 recommender.py # AI recommendation engine
-├── 📋 requirements.txt # Python dependencies
-├── 📖 README.md # This file
-│
-├── 📂 data/ # Dataset directory
-│ ├── tmdb_5000_movies.csv # ← Place your TMDB file here
-│ └── tmdb_5000_credits.csv # ← Place your TMDB file here
-│
-├── 📂 templates/ # Jinja2 HTML templates
-│ ├── index.html # Homepage
-│ ├── movie.html # Movie detail page
-│ ├── search.html # Search & browse page
-│ └── 404.html # Error page
-│
-└── 📂 static/
-├── 📂 css/
-│ └── style.css # Full Netflix-dark stylesheet
-└── 📂 js/
-└── main.js # Interactive JavaScript
+# 🛠️ Tech Stack
 
-text
-
+| Category | Technology |
+|----------|-------------|
+| Backend | Python, Flask |
+| Machine Learning | Scikit-learn, Pandas, NumPy |
+| Frontend | HTML, CSS, JavaScript |
+| UI Style | Netflix Dark Theme |
+| Dataset | TMDB 5000 Movies Dataset |
 
 ---
 
-## 🚀 Setup & Installation
-
-### Prerequisites
-- Python 3.8+
-- TMDB 5000 Movie Dataset from Kaggle
-
-### Step 1: Download Dataset
-1. Go to [Kaggle TMDB Dataset](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata)
-2. Download `tmdb_5000_movies.csv` and `tmdb_5000_credits.csv`
-3. Place both files in the `data/` folder
-
-### Step 2: Install Dependencies
+# 📁 Project Structure
 
 ```bash
-# Create virtual environment
-python -m venv venv
+CineYantra/
+│
+├── app.py
+├── recommender.py
+├── requirements.txt
+├── README.md
+│
+├── data/
+│   ├── tmdb_5000_movies.csv
+│   └── tmdb_5000_credits.csv
+│
+├── templates/
+│   ├── index.html
+│   ├── movie.html
+│   ├── search.html
+│   └── 404.html
+│
+└── static/
+    ├── css/
+    │   └── style.css
+    ├── js/
+    │   └── main.js
+    └── posters/
+```
 
-# Activate it
-# Windows:
-venv\Scripts\activate
-# macOS/Linux:
-source venv/bin/activate
+---
 
-# Install requirements
-pip install -r requirements.txt
-Step 3: Run MayaFlix
-Bash
+# 📥 Dataset
 
-python app.py
-Step 4: Open in Browser
-text
+Download the TMDB dataset from Kaggle:
 
-http://localhost:5000
-🎯 API Endpoints
-Endpoint	Method	Description
-/	GET	Homepage with featured movies
-/search?q=batman	GET	Search movies
-/genre/Action	GET	Browse by genre
-/movie/<id>	GET	Movie detail + recommendations
-/api/recommend	POST	AI recommendations JSON
-/api/search?q=query	GET	Search API
-/api/autocomplete?q=bat	GET	Autocomplete API
-API Example:
-Python
+🔗 https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata
 
-import requests
+Place these files inside the `data/` folder:
 
-response = requests.post('http://localhost:5000/api/recommend', 
-    json={'title': 'The Dark Knight', 'n': 10})
-print(response.json())
-🛠️ Tech Stack
-Layer	Technology
-Backend	Python 3.8+, Flask 3.0
-ML Engine	Scikit-learn, Pandas, NumPy
-Algorithm	TF-IDF + Cosine Similarity
-Frontend	HTML5, CSS3, JavaScript (Vanilla)
-UI Style	Glassmorphism, Netflix Dark Theme
-Dataset	TMDB 5000 Movies (Kaggle)
-Fonts	Inter (Google Fonts)
-Icons	Font Awesome 6
-📊 Dataset
-The TMDB 5000 Movie Dataset includes:
+- `tmdb_5000_movies.csv`
+- `tmdb_5000_credits.csv`
 
-5000 movies with metadata
-Genres, keywords, overview
-Cast & crew information
-Ratings, popularity, budget, revenue
-Download from: https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata
+---
 
-🖥️ Screenshots
-Homepage
-Animated hero section with particle effects
-Featured movies grid
-Trending horizontal scroll
-Top rated section
-AI recommendation widget
-Movie Detail
-Movie metadata, rating, cast
-Budget & revenue stats
-AI "Find Similar Movies" button
-Related movies grid
-Search Page
-Real-time autocomplete
-Genre filter pills
-Results grid with animations
-🤝 Contributing
-Fork the repository
-Create your feature branch: git checkout -b feature/amazing-feature
-Commit your changes: git commit -m 'Add amazing feature'
-Push to the branch: git push origin feature/amazing-feature
-Open a Pull Request
-📄 License
+# 🚀 Installation & Setup
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/your-username/CineYantra.git
+cd CineYantra
+```
+
+---
+
+## 2️⃣ Install Dependencies
+
+```bash
+py -m pip install -r requirements.txt
+```
+
+---
+
+## 3️⃣ Run Project
+
+```bash
+py app.py
+```
+
+---
+
+## 4️⃣ Open in Browser
+
+```text
+http://127.0.0.1:5000
+```
+
+---
+
+# 🎯 API Routes
+
+| Route | Description |
+|------|-------------|
+| `/` | Homepage |
+| `/search` | Search Movies |
+| `/movie/<id>` | Movie Details |
+| `/api/recommend` | Get Recommendations |
+| `/api/autocomplete` | Search Suggestions |
+
+---
+
+# 🖼️ UI Highlights
+
+- 🌌 Cinematic Hero Section
+- ✨ Glassmorphism Effects
+- 🎞️ Animated Movie Cards
+- 🌙 Dark Premium Theme
+- 📱 Responsive Layout
+- ⚡ Smooth Hover Animations
+
+---
+
+# 📊 Recommendation Algorithm
+
+CineYantra uses:
+
+- TF-IDF Vectorization
+- Cosine Similarity Matrix
+- Movie Metadata Analysis
+
+The model compares:
+- Genres
+- Overview
+- Keywords
+- Cast
+- Director
+
+to recommend similar movies intelligently.
+
+---
+
+# 🔥 Future Improvements
+
+- 🎤 Voice Search
+- 🎥 Movie Trailer Support
+- ⭐ User Ratings
+- ❤️ Cloud Watchlist
+- 🌐 Online API Integration
+- 🧠 Hybrid Recommendation System
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+```bash
+Fork → Clone → Create Branch → Commit → Push → Pull Request
+```
+
+---
+
+# 📄 License
+
 This project is licensed under the MIT License.
 
-👤 Author
-MayaFlix - Built with ❤️ By Bismaya Guruprasad Panda
+---
+
+# 👨‍💻 Author
+
+### Bismaya Guruprasad Panda
+
+Built with ❤️ By Bismaya Guruprasad Panda
+---
 
 <div align="center">
-🎬 Happy Movie Watching with MayaFlix!
 
-If you found this helpful, please ⭐ the repository!
+## ⭐ If you like this project, give it a star!
 
-</div> ```
+🎬 Happy Movie Watching with CineYantra 🍿
+
+</div>
